@@ -19,6 +19,12 @@ io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg);
   });
+  socket.on('adminStep', (value) => {
+    io.emit('adminStep', value);
+  });
+  socket.on('who', (msg) => {
+    io.emit('who', msg);
+  });
 });
 
 server.listen(3310, () => {
