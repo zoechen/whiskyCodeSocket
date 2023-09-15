@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
+  socket.on('keep-alive', (msg) => {
+    io.emit('keep-alive', msg);
   });
   socket.on('adminStep', (value) => {
     io.emit('adminStep', value);
